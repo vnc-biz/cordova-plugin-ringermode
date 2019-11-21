@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.apache.commons.lang.ArrayUtils;
+// import org.apache.commons.lang.ArrayUtils;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -59,12 +59,12 @@ public class ringerMode extends CordovaPlugin {
         Context context = this.cordova.getActivity().getApplicationContext();
         AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
-        if (this.isValidMode(mode)) {
+//         if (this.isValidMode(mode)) {
             audioManager.setRingerMode(mode);
             callbackContext.success(echoedResponse);
-        } else {
-            callbackContext.error("NONE");
-        }
+//         } else {
+//             callbackContext.error("NONE");
+//         }
     }
 
     private void setRingerSilent(CallbackContext callbackContext) {
@@ -79,7 +79,7 @@ public class ringerMode extends CordovaPlugin {
         this.setRingerMode(callbackContext, AudioManager.RINGER_MODE_NORMAL, "RINGER_MODE_NORMAL");
     }
 
-    private boolean isValidMode(final int mode) {     
-        return ArrayUtils.contains(this.validModes, mode);
-    }
+//     private boolean isValidMode(final int mode) {     
+//         return ArrayUtils.contains(this.validModes, mode);
+//     }
 }
